@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Router Log Anomaly Detector</title>
+</head>
+<body>
+    <h2>Masukkan Log Router:</h2>
+    <form method="post">
+        <textarea name="logs" rows="10" cols="80" placeholder="Paste log router di sini..."></textarea><br>
+        <input type="submit" value="Prediksi">
+    </form>
+
+    {% if results %}
+    <h3>Hasil Prediksi:</h3>
+    <ul>
+        {% for log, label, score in results %}
+        <li><strong>[{{ label }}]</strong> ({{ score }}) - {{ log }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
